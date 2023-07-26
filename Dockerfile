@@ -3,8 +3,9 @@
 FROM python:3.8-slim-buster
 
 # Current directory that Dockerfile is in is copied to root in container
-COPY . /Flask-Docker
-WORKDIR /Flask-Docker
+COPY ./app /app
+WORKDIR /app
+VOLUME /app
 RUN pip install -r requirements.txt
 
 # Pipiline commands

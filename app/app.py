@@ -1,0 +1,24 @@
+import sqlite3
+from src import emailer
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    # If a URL request has ? followed by key value pairs and there is a method key
+    # it was generated with the form's hidden id
+    if request.args.get("method") == "emailer.py":
+        emailer.run(request.args)
+
+    # Run the index HTML code with contents from the database
+    return render_template('index.html')
+
+
+if __name__ == "__main__":
+    app.config.update(
+        TESTING=True,
+        ENV='development'
+    )
+    app.run(debug=True)
