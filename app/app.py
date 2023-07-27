@@ -12,7 +12,7 @@ def index():
     if request.args.get("method") == "emailer.py":
         emailer.run(request.args)
 
-    # Run the index HTML code with contents from the database
+    # Run the index HTML code
     return render_template('index.html')
 
 

@@ -1,7 +1,5 @@
-:: Change dir into the project root
-cd ..
 :: Install requirements
-pip install -r requirements.txt
+pip install -r app/requirements.txt
 :: Set the name of the Flask app
 set FLASK_APP=app
 :: Set the environment level of the Flask app

@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# Change dir into the project root
-cd ..
 # Delete the containers from previous builds
-docker rm $(docker stop $(docker ps -qf "name=Flask-Docker"))
+docker rm $(docker stop $(docker ps -aqf "name=Flask-Docker"))
 
 # Build Docker image
-docker build -t michaelthamm/github-projects:Flask-Docker -f ./Dockerfile .
+docker build -t michaelthamm/github-projects:Flask-Docker .
 # Run the Docker container in detached mode to allow access to port 5000
 docker run --name Flask-Docker -d -p 5000:5000 michaelthamm/github-projects:Flask-Docker
 # Set the local webpage location
