@@ -25,19 +25,19 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url("https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/anthony-intraversato-vYRAP3yMa3I-unsplash.jpg?raw=true");
+  background-image: url("https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/backgrounds/anthony-intraversato-vYRAP3yMa3I-unsplash.jpg?raw=true");
   min-height: 100%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url('https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/ian-dooley-hpTH5b6mo2s-unsplash.jpg?raw=true');
+  background-image: url('https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/backgrounds/ian-dooley-hpTH5b6mo2s-unsplash.jpg?raw=true');
   min-height: 300px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url("https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/zhu-hongzhi-R2vJ_d-yLe4-unsplash.jpg?raw=true");
+  background-image: url("https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/backgrounds/zhu-hongzhi-R2vJ_d-yLe4-unsplash.jpg?raw=true");
   min-height: 300px;
 }
 
@@ -50,10 +50,18 @@ body, html {
   gap: 16px;
 }
 
-.w3-fifth {
-  float:left;
-  width:100%;
-  width:19.99999%;
+.parent {
+  display: flex;
+}
+
+.child-hor {
+  flex :1;
+}
+
+.child-vert {
+  flex :1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -125,37 +133,23 @@ body, html {
   </div>
 </div>
 
-<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">Masters of Science</span><br>
-    Highest Degree
+<div class="w3-row w3-center w3-dark-grey w3-padding-16" style="display: flex">
+  <div class="w3-third w3-section child-ver">
+    <div class="w3-row w3-center w3-dark-grey child-hor">
+      <span class="w3-xlarge child-hor">Masters of Science</span>
+    </div>
+    <span class="w3-medium child-hor">Highest Degree</span>
   </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">
-      <div class="w3-fifth w3-padding-small">
-        <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/MiniLogoRiskine.jpeg?raw=true" class="w3-round w3-image w3-hover-opacity-off">
-      </div>
-      <div class="w3-fifth w3-padding-small">
-        <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/MiniLogoKinarm.jpg?raw=true" class="w3-round w3-image w3-hover-opacity-off">
-      </div>
-      <div class="w3-fifth w3-padding-small">
-        <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/MiniLogoBraveCS.png?raw=true" class="w3-round w3-image w3-hover-opacity-off">
-      </div>
-      <div class="w3-fifth w3-padding-small">
-        <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/MiniLogoValiant.jpeg?raw=true" class="w3-round w3-image w3-hover-opacity-off">
-      </div>
-      <div class="w3-fifth w3-padding-small">
-        <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/MiniLogoEnerQuest.png?raw=true" class="w3-round w3-image w3-hover-opacity-off">
-      </div>
-    </span><br>
-    Previous Companies
+  <div class="w3-third w3-section child-ver">
+    <div class="w3-row w3-center w3-dark-grey child-hor">
+      <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/LogoPython.png?raw=true" class="w3-image w3-round" style="width:15%">
+      <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/LogoJava.png?raw=true" class="w3-image w3-round" style="width:15%">
+      <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/LogoCpp.png?raw=true" class="w3-image w3-round" style="width:15%">
+    </div>
+    <span class="w3-medium child-hor">Programming Languages</span>
   </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">Python, Java, C++</span><br>
-    Programming Languages
-  </div>
-  <div class="w3-quarter w3-section">
-    <div class="w3-row w3-center w3-dark-grey padding-ver-4">
+  <div class="w3-third w3-section child-ver">
+    <div class="w3-row w3-center w3-dark-grey child-hor">
       <div class="w3-quarter w3-padding-small">
         <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/flags/flag-of-Austria.png?raw=true" class="w3-round w3-image w3-hover-opacity-off">
       </div>
@@ -169,7 +163,7 @@ body, html {
         <img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/flags/flag-of-United-States-of-America.png?raw=true" class="w3-round w3-image w3-hover-opacity-off">
       </div>
     </div>
-    Countries Worked In
+    <span class="w3-medium child-hor">Countries Worked In</span>
   </div>
 </div>
 
@@ -239,26 +233,24 @@ body, html {
       <a href="https://kinarm.com/"><img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/LogoKinarm.jpg?raw=true" class="w3-image w3-round" style="width:15%"></a>
     </div>
     <p class="w3-center">I worked for <a href="https://kinarm.com/">Kinarm</a> as a <em>Juniour Software Developer</em> where I professionally transitioned careers from Electrical Engineer to Software Engineer.<br>
-    My accomplishments and responsibilities include:
+    My accomplishments and responsibilities include:</p>
       <ul>
         <li>Java and Python backend programming resulting in 3 projects and 21 combined resolved tickets</li>
         <li>Operate within the main IT role resulting in 2 projects and 23 resolved tickets</li>
         <li>Assembly and integration of Linux Ubuntu host server and Windows Server 2022</li>
         <li>On-site installation and collaboration with neuroscience researchers using Kinarms</li>
       </ul>
-    </p>
   </div>
   <div>
     <div class="w3-container w3-center">
       <a href="https://www.bravecs.com/"><img src="https://github.com/MichaelThamm/Flask-Docker/blob/main/app/images/logos/LogoBraveCS.png?raw=true" class="w3-image w3-round" style="width:15%"></a>
     </div>
     <p class="w3-center">I worked for <a href="https://www.bravecs.com/">Brave Control Solutions</a> as a <em>Controls Specialist</em> where I worked on projects in Canada: British Columbia & Ontario, USA: Michigan, and Mexico: Senora.<br>
-    My accomplishments and responsibilities include:
-	<ul>
-	  <li>IIoT asset data collection project for Ford using MQTT broker and Siemens Simatic IPC</li>
-    <li>ABB Robotics programming in Rapid to synchronise adaptive welding</li>
-	</ul>
-    </p>
+    My accomplishments and responsibilities include:</p>
+    <ul>
+      <li>IIoT asset data collection project for Ford using MQTT broker and Siemens Simatic IPC</li>
+      <li>ABB Robotics programming in Rapid to synchronise adaptive welding</li>
+    </ul>
   </div>
 </div>
 
