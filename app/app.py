@@ -1,6 +1,8 @@
 import emailer
+import sys
 from flask import Flask, render_template, request
 
+print(sys.path)
 app = Flask(__name__)
 
 
