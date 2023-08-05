@@ -1,1 +1,1 @@
-web:gunicorn michaelthamm-website:app
+web:gunicorn app.app:app
