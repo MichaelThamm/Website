@@ -1,5 +1,4 @@
-import sqlite3
-from src import emailer
+import emailer
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
