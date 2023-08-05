@@ -2,7 +2,6 @@ import emailer
 import sys
 from flask import Flask, render_template, request
 
-print(sys.path)
 app = Flask(__name__)
 
 
@@ -18,8 +17,9 @@ def index():
 
 
 if __name__ == "__main__":
-    app.config.update(
-        TESTING=True,
-        ENV='development'
-    )
-    app.run(debug=True)
+    print(sys.path)
+    # app.config.update(
+    #     TESTING=True,
+    #     ENV='development'
+    # )
+    # app.run(debug=True)
