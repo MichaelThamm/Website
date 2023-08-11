@@ -1,6 +1,6 @@
 import emailer
 import sys
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template, send_from_directory
 
 app = Flask(__name__)
 
@@ -14,6 +14,12 @@ def index():
 
     # Run the index HTML code
     return render_template('index.html')
+
+
+@app.route('/.well-known/acme-challenge/<file>')
+def acme_challenge(file):
+    directory = 'public/.well-known/acme-challenge'
+    return send_from_directory(directory, file)
 
 
 if __name__ == "__main__":
