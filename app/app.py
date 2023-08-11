@@ -1,6 +1,6 @@
 import emailer
 import os
-from flask import Flask, request, render_template, send_from_directory
+from flask import Flask, request, Response, render_template
 
 app = Flask(__name__)
 
@@ -18,8 +18,14 @@ def index():
 
 @app.route('/.well-known/acme-challenge/<file>')
 def acme_challenge(file):
-    directory = os.path.abspath('public/.well-known/acme-challenge')
-    return send_from_directory(directory, file)
+    file_path = 'public/.well-known/acme-challenge/' + file
+    print(file_path)
+    try:
+        with open(file_path, 'r') as f:
+            file_content = f.read()
+            return Response(file_content, content_type='text/plain')
+    except FileNotFoundError:
+        return "File not found", 404
 
 
 if __name__ == "__main__":
