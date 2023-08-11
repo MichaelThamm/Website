@@ -1,5 +1,5 @@
 import emailer
-import sys
+import os
 from flask import Flask, request, render_template, send_from_directory
 
 app = Flask(__name__)
@@ -18,14 +18,13 @@ def index():
 
 @app.route('/.well-known/acme-challenge/<file>')
 def acme_challenge(file):
-    directory = 'public/.well-known/acme-challenge'
+    directory = os.path.abspath('public/.well-known/acme-challenge')
     return send_from_directory(directory, file)
 
 
 if __name__ == "__main__":
-    print(sys.path)
-    # app.config.update(
-    #     TESTING=True,
-    #     ENV='development'
-    # )
-    # app.run(debug=True)
+    app.config.update(
+        TESTING=True,
+        ENV='development'
+    )
+    app.run(debug=True)
