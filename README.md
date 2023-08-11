@@ -10,6 +10,9 @@ To host the application on the web, Heroku was used which uses Git to manage the
 ## Hosted Locally
 To host the web page locally, run [DevelopeEnvironment.bat](https://github.com/MichaelThamm/Flask-Docker/blob/main/DevelopeEnvironment.bat) and then [StartApp.bat](https://github.com/MichaelThamm/Flask-Docker/blob/main/StartApp.bat) once complete. These two batch files will create a clean developement environment by creating a virtual environment and installing dependancies. Then the app is started using Flask and a browser to the correct local port is opened which is the website.
 
+## Certification Lets-Encrypt
+[letsencrypt-and-heroku-in-5-minutes](https://medium.com/@bantic/free-tls-with-letsencrypt-and-heroku-in-5-minutes-807361cca5d3)
+
 # Conclusion
 Flask was used to create a web application using the HTML/JavaScript templates from w3schools which serve as good portfolio websites. The use of Docker and Git streamlines the maintainance process for the web application environment making it a robust workflow.
 
