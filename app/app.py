@@ -19,7 +19,6 @@ def index():
 @app.route('/.well-known/acme-challenge/<file>')
 def acme_challenge(file):
     file_path = 'public/.well-known/acme-challenge/' + file
-    print(file_path)
     try:
         with open(file_path, 'r') as f:
             file_content = f.read()
