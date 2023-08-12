@@ -13,6 +13,7 @@ To host the web page locally, run [DevelopeEnvironment.bat](https://github.com/M
 ## Certification Lets-Encrypt
 [letsencrypt-and-heroku-in-5-minutes](https://medium.com/@bantic/free-tls-with-letsencrypt-and-heroku-in-5-minutes-807361cca5d3)
 [eco-plan-disallows-certs](https://devcenter.heroku.com/articles/ssl)
+[cloudflare-options](https://stackoverflow.com/questions/52185560/heroku-set-ssl-certificates-on-free-plan)
 
 # Conclusion
 Flask was used to create a web application using the HTML/JavaScript templates from w3schools which serve as good portfolio websites. The use of Docker and Git streamlines the maintainance process for the web application environment making it a robust workflow.
