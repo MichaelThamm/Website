@@ -1,6 +1,5 @@
 import emailer
-import os
-from flask import Flask, request, Response, render_template
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -14,17 +13,6 @@ def index():
 
     # Run the index HTML code
     return render_template('index.html')
-
-
-@app.route('/.well-known/acme-challenge/<file>')
-def acme_challenge(file):
-    file_path = 'public/.well-known/acme-challenge/' + file
-    try:
-        with open(file_path, 'r') as f:
-            file_content = f.read()
-            return Response(file_content, content_type='text/plain')
-    except FileNotFoundError:
-        return "File not found", 404
 
 
 if __name__ == "__main__":
