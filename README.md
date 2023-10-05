@@ -1,18 +1,28 @@
 
-Welcome, this is a repo to host a website using Python, JavaScript, HTML, Flask, Docker, Heroku.
+# Welcome
+This is a repo to host a website using:
+* [Flask](https://flask.palletsprojects.com/en/3.0.x/) - Python web framework
+* [Docker](https://www.docker.com/) - containerization
+* [Heroku](https://dashboard.heroku.com/apps) - hosting provider
+* [GitHub Actions](https://github.com/MichaelThamm/website/actions/workflows/heroku-deploy.yml) - automation & integration
+  * [Lighthouse](https://github.com/marketplace/actions/lighthouse-ci-action) - web anaylsis tool
 
 ## Hosted on the Web
-* This application is hosted on the web using Heroku. Follow the Heroku-Flask link in the Supporting References section to create one for yourself.
 * My page can be found at [www.michaelthamm.com](http://www.michaelthamm.com) which uses some of the Youtube videos to set up a paid custom domain or you can do it free using the herokuapp.com domain.
 
 ## Hosted Locally
 * To run the web page locally, run [run-docker.sh](https://github.com/MichaelThamm/website/blob/main/run-docker.sh).
 
 ## CI/CD Automation
-To test the CI/CD for the website, check out this [deployment-testing-repo](https://github.com/MichaelThamm/gitlab-docker-ci)
-
-# Conclusion
-Flask was used to create a web application using the HTML/JavaScript templates from w3schools which serve as good portfolio websites. The use of Docker and Git streamlines the maintainance process for the web application environment making it a robust workflow.
+* The generic workflow follows:
+  * __build__
+    * Test the website page reference URLs for failure.
+    * Build the docker image
+    * Push the docker image to DockerHub
+  * __deploy__
+    * Push the application to Heroku resource
+  * __test-deployed__
+    * Run lighthouse to test the metrics of the deployed webpage
 
 # Supporting References
 - [Docker-Flask](https://www.freecodecamp.org/news/how-to-dockerize-a-flask-app/)
