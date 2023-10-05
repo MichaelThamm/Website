@@ -29,8 +29,8 @@ jobs:
         DOCKER_PSWD: ${{secrets.DOCKER_PSWD}}
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PSWD
-        docker build . -t michaelthamm/website:${{GITHUB_REF_NAME}}
-        docker push michaelthamm/website:${{GITHUB_REF_NAME}}
+        docker build . -t michaelthamm/website:$GITHUB_REF_NAME
+        docker push michaelthamm/website:$GITHUB_REF_NAME
 #    - name: Heroku deploy
 #      env:
 #        DOCKER_USER: ${{secrets.DOCKER_USER}}
