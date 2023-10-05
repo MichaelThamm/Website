@@ -1,11 +1,22 @@
 [
   {
-    "path": "/*",
-    "resourceSizes": [
-      {
-        "resourceType": "total",
-        "budget": 200
-      }
-    ]
+    "resourceSizes": {
+      "images": 2048,
+      "media": 2048,
+      "font": 1024,
+      "script": 512,
+      "stylesheet": 512
+    },
+    "timings": {
+      "total": 5000,
+      "script": 2000,
+      "scriptBlocking": 200,
+      "css": 2000
+    },
+    "resourceCounts": {
+      "third-party": 5,
+      "total": 30
+    },
+    "cpu": 1500
   }
 ]
