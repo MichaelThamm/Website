@@ -14,6 +14,7 @@ This is a repo to host a website using:
 * To run the web page locally, run [run-docker.sh](https://github.com/MichaelThamm/website/blob/main/run-docker.sh).
 
 ## CI/CD Automation
+![Actions Workflow](https://github.com/MichaelThamm/website/blob/main/readme-samples/worfklow.png)
 * The generic workflow follows:
   * __build__
     * Test the website page reference URLs for failure.
@@ -23,6 +24,8 @@ This is a repo to host a website using:
     * Push the application to Heroku resource
   * __test-deployed__
     * Run lighthouse to test the metrics of the deployed webpage
+![Lighthouse Results Summary](https://github.com/MichaelThamm/website/blob/main/readme-samples/lighthouse-results-1.png)
+![Lighthouse Speed Results](https://github.com/MichaelThamm/website/blob/main/readme-samples/lighthouse-results-2.png)
 
 # Supporting References
 - [Docker-Flask](https://www.freecodecamp.org/news/how-to-dockerize-a-flask-app/)
