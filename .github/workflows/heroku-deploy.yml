@@ -2,7 +2,6 @@ name: Deploy Website
 
 on:
   push:
-    branches: [ "main" ]
     tags:
       - 'v*'
 
@@ -12,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Test index.html links
+      run: |
+        . ./app/tests/test-urls.sh
     - name: Docker login
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
@@ -27,16 +29,9 @@ jobs:
         docker build . -t michaelthamm/website:$GITHUB_REF_NAME
         docker push michaelthamm/website:$GITHUB_REF_NAME
 
-  test-local:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test index.html links
-        run: |
-          . ./app/tests/test-urls.sh
-
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.14
@@ -47,6 +42,7 @@ jobs:
 
   test-deployed:
     runs-on: ubuntu-latest
+    needs: deploy
     steps:
       - uses: actions/checkout@v3
       - name: Audit URLs using Lighthouse
