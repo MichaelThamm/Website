@@ -28,6 +28,8 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PSWD
         docker build . -t michaelthamm/website:$GITHUB_REF_NAME
         docker push michaelthamm/website:$GITHUB_REF_NAME
+        docker tag michaelthamm/website:$GITHUB_REF_NAME michaelthamm/website:latest
+        docker push michaelthamm/website:latest
 
   deploy:
     runs-on: ubuntu-latest
