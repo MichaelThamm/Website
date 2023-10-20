@@ -7,7 +7,9 @@ COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install -r requirements.txt
 
-https://medium.com/ruby-daily/deploy-backend-and-frontend-apps-on-the-same-heroku-dyno-cfc6978a24d5
+A dyno is a container for a single main process falling into two main categories, web or worker:
+* A web process could be a Rails web server, Django app, etc. A worker process could be running Sidekiq, Resque, RQ or celery.
+* https://medium.com/ruby-daily/deploy-backend-and-frontend-apps-on-the-same-heroku-dyno-cfc6978a24d5
 # Set environment variables
 ENV DATABASE_HOST=your_database_host
 ENV DATABASE_PORT=your_database_port
