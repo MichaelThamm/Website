@@ -1,23 +1,31 @@
+import asyncio
 import emailer
-from flask import Flask, request, render_template
+import os.path
+import tornado
 
-app = Flask(__name__, static_url_path='/static')
+
+class MainHandler(tornado.web.RequestHandler):
+    def get(self):
+        # Run the index HTML code
+        self.render('index.html')
+
+    def post(self):
+        # Handle form submissions
+        method_value = self.get_argument("method", None)
+        if method_value == "emailer.py":
+            emailer.run(self.request.arguments)
 
 
-@app.route('/')
-def index():
-    # If a URL request has ? followed by key value pairs and there is a method key
-    # it was generated with the form's hidden id
-    if request.args.get("method") == "emailer.py":
-        emailer.run(request.args)
-
-    # Run the index HTML code
-    return render_template('index.html')
+def make_app():
+    return tornado.web.Application([
+        (r"/", MainHandler)
+    ],
+    template_path=os.path.join(os.path.dirname(__file__), "templates"),
+    debug = True,
+    autoreload = True)
 
 
 if __name__ == "__main__":
-    app.config.update(
-        TESTING=True,
-        ENV='development'
-    )
-    app.run(debug=True)
+    app = make_app()
+    app.listen(5000)
+    tornado.ioloop.IOLoop.current().start()
