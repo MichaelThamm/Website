@@ -18,7 +18,8 @@ class MainHandler(tornado.web.RequestHandler):
 
 def make_app():
     return tornado.web.Application([
-        (r"/", MainHandler)
+        (r"/", MainHandler),
+        (r'/static/(.*)', tornado.web.StaticFileHandler, {'path': 'static'}),
     ],
     template_path=os.path.join(os.path.dirname(__file__), "templates"),
     debug = True,
