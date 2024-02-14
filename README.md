@@ -27,6 +27,16 @@ This is a repo to host a website using:
 ![Lighthouse Results Summary](https://github.com/MichaelThamm/website/blob/main/readme-samples/lighthouse-results-1.png)
 ![Lighthouse Speed Results](https://github.com/MichaelThamm/website/blob/main/readme-samples/lighthouse-results-2.png)
 
+## Execute CI/CD
+* Create a tag
+´´´
+git tag vX.X.X
+´´´
+* Push the tag to heroku
+´´´
+git push origin vX.X.X
+´´´
+
 # Supporting References
 - [Docker-Flask](https://www.freecodecamp.org/news/how-to-dockerize-a-flask-app/)
 - [Flask-Web-App](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3)
