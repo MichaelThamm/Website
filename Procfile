@@ -1,1 +1,1 @@
-web: cd app && gunicorn app:make_app
+web: cd app && python app.py
