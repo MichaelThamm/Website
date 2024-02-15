@@ -29,13 +29,13 @@ This is a repo to host a website using:
 
 ## Execute CI/CD
 * Create a tag
-´´´
+```
 git tag vX.X.X
-´´´
+```
 * Push the tag to heroku
-´´´
+```
 git push origin vX.X.X
-´´´
+```
 
 # Supporting References
 - [Docker-Flask](https://www.freecodecamp.org/news/how-to-dockerize-a-flask-app/)
