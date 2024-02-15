@@ -8,9 +8,6 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         # Run the index HTML code
         self.render('index.html')
-
-    def post(self):
-        # Handle form submissions
         method_value = self.get_argument("method", None)
         if method_value == "emailer.py":
             emailer.run(self.request.arguments)
