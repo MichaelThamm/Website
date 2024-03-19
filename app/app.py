@@ -1,5 +1,6 @@
 import emailer
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Response
+import time
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -13,6 +14,17 @@ def index():
 
     # Run the index HTML code
     return render_template('index.html')
+
+
+@app.route('/health-check-stream')
+def health_check_stream():
+    def generate_health_status():
+        while True:
+            health_status = "ERROR" if time.time() % 2 == 0 else "OK"
+            yield f"data: {health_status}\n\n"
+            time.sleep(1)
+            
+    return Response(generate_health_status(), mimetype='text/event-stream')
 
 
 if __name__ == "__main__":
